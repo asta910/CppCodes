@@ -70,13 +70,20 @@ public:
 };
 
 class Joined : public WageWorker, public SalesManager {
+int sales;
 public:
     Joined(int id, long nb, int sal, int extra, int absent, int sales, int advSpending)
-        : Employee(id, nb, sal), WageWorker(id, nb, sal, extra, absent), SalesManager(id, nb, sal, sales, advSpending) {}
+        : Employee(id, nb, sal), WageWorker(id, nb, sal, extra, absent), SalesManager(id, nb, sal, sales, advSpending) {
+            this -> sales = sales;
+        }
 
     void calculateSalary() {
-        WageWorker::calculateSalary();
+        if(sales == 0){
+            WageWorker::calculateSalary();
+        }
+        else{
         SalesManager::calculateSalary();
+        }
     }
 };
 

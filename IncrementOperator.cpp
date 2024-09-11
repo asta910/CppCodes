@@ -31,7 +31,7 @@ Complex& Complex::operator=(Complex& a){
 
 }
 void Complex::show(){
-    cout<<"size is : "<<size<<" & name is"<<pointer<<endl;
+    cout<<" name is " << pointer << endl;
 }
 int main(){
     Complex c("Yogesh");
